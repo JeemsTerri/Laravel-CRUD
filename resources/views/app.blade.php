@@ -25,9 +25,9 @@
     <!-- Site wrapper -->
     <div class="wrapper">
 
-        @include('adminlte.partials.mainnav')
+        @include('partials.mainnav')
 
-        @include('adminlte.partials.aside')
+        @include('partials.aside')
 
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
@@ -38,33 +38,35 @@
                         <div class="col-sm-6">
                             <h1>@yield('page-header')</h1>
                         </div>
-                        <div class="col-sm-6">
+                        {{-- <div class="col-sm-6">
                             <ol class="breadcrumb float-sm-right">
-                                <li class="breadcrumb-item"><a href="{{ url('/') }}">Dashboard</a></li>
-                                @stack('breadcrumb')
-                            </ol>
-                        </div>
-                    </div>
-                </div><!-- /.container-fluid -->
-            </section>
+                                <li class="breadcrumb-item"><a href="{{ route('pertanyaan.create') }}">Pertanyaan</a>
+                        </li>
+                        @stack('breadcrumb')
+                        </ol>
+                    </div> --}}
+                </div>
+        </div><!-- /.container-fluid -->
+        </section>
 
-            <!-- Main content -->
-            <section class="content">
+        <!-- Main content -->
+        <section class="content">
+            <div class="container-fluid">
 
                 @yield('content')
+            </div>
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
 
-            </section>
-            <!-- /.content -->
-        </div>
-        <!-- /.content-wrapper -->
+    @include('partials.footer')
 
-        @include('adminlte.partials.footer')
-
-        <!-- Control Sidebar -->
-        <aside class="control-sidebar control-sidebar-dark">
-            <!-- Control sidebar content goes here -->
-        </aside>
-        <!-- /.control-sidebar -->
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+        <!-- Control sidebar content goes here -->
+    </aside>
+    <!-- /.control-sidebar -->
     </div>
     <!-- ./wrapper -->
 
